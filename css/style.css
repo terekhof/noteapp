@@ -1,0 +1,45 @@
+body {
+  background: #EDEEF0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app {
+  background: #fff;
+}
+
+.app__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: 1px solid #EDEEF0;
+}
+
+.app__button {
+  color: #4cf209;
+  border: 1px solid #4cf209;
+  background: #fff;
+  outline: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.app__button:hover {
+  background: #4cf209;
+  color: #fff;
+}
+
+h1 {
+  color: #4cf209;
+  margin: 0;
+}
+
+.app__body {
+  min-height: 750px;
+  padding: 1rem
+}
