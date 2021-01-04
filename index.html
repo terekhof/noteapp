@@ -16,15 +16,36 @@
           <h1>Note App</h1>
         </div>
         <div class="app__buttons">
-          <button class="app__button">Create Note</button>
-          <button class="app__button">Add Folder</button>
+          <button id="myBtn" class="app__button">Create Note</button>
         </div>
       </div>
       <div class="app__body">
-        <img src="img/Folder.svg">
-        <img src="img/Note.svg">
+        <div class="app__content">
+          <ul id="elements" class="app__elements">        
+          </ul>
+        </div>
+      </div>
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+          </div>
+          <form class="modal-form">
+            <div class="modal__field">
+              <label class="modal__label">Title</label>
+              <input class="modal__input" name="user_name" type="text" pattern="[A-Za-zА-Яа-яЁё]{2,}" required>
+            </div>
+            <div class="modal__field">
+              <label class="modal__label">Text</label>
+              <textarea id="textarea" style="resize: none;" class="modal__input textarea"></textarea>
+            </div>
+            <button id="addBtn" class="modal__button">Add Note</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
+<script src="scripts/app.js"></script>
+<script src="scripts/modal.js"></script>   
 </body>
 </html>
