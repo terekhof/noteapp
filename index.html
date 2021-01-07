@@ -21,7 +21,7 @@
       </div>
       <div class="app__body">
         <div class="app__content">
-          <ul id="elements" class="app__elements">        
+          <ul id="elements" class="app__elements">      
           </ul>
         </div>
       </div>
@@ -30,16 +30,16 @@
           <div class="modal-header">
             <span class="close">&times;</span>
           </div>
-          <form class="modal-form">
+          <form class="modal-form" action="">
             <div class="modal__field">
               <label class="modal__label">Title</label>
-              <input class="modal__input" name="user_name" type="text" pattern="[A-Za-zА-Яа-яЁё]{2,}" required>
+              <input class="modal__input" name="user_name" type="text">
             </div>
             <div class="modal__field">
               <label class="modal__label">Text</label>
-              <textarea id="textarea" style="resize: none;" class="modal__input textarea"></textarea>
+              <textarea id="textarea" style="resize: none;" class="modal__input-textarea"></textarea>
             </div>
-            <button id="addBtn" class="modal__button">Add Note</button>
+            <button type="submit" id="addBtn" class="modal__button" type="submit" placeholder="submit">add Note</button>
           </form>
         </div>
       </div>

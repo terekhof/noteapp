@@ -29,6 +29,29 @@ body {
   font-size: 1rem;
 }
 
+.app__elements {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.app__element {
+  padding: 1rem;
+  border-bottom: 0.5px solid silver;
+}
+
+.app__title {
+  font-size: 1.5rem;
+  margin: 0 1rem 0 0;
+}
+
+.app__note {
+  font-size: 1rem;
+  margin: 1rem 0
+}
+
 .app__body {
   height: 750px;
 }
@@ -137,8 +160,13 @@ h1 {
   font-weight: 700;
 }
 
-.textarea {
+.modal__input-textarea {
   min-height: 300px;
+  display: block;
+  padding: 12px 25px 12px 15px;
+  border: 1px solid rgba(27, 27, 28, 0.15);
+  border-radius: 4px;
+  outline-color: rgba(27, 27, 28, 0.25);
 }
 
 .modal-form {
