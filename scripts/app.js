@@ -1,14 +1,22 @@
 const popup = document.querySelector('.modal');
 const noteForm = document.querySelector('.modal-form');
 const noteTable = document.querySelector('.app__elements');
+const cancel = document.querySelector('.cancel-btn');
  
 let noteDeleteButtons;
-let noteList = [];
+let noteList = JSON.parse(localStorage.getItem('notes'));
 
+if(noteList !== null){
+  appendNotes();
+}
 
 noteForm.addEventListener('submit', (e)=> {
   addNote(e);
 });
+
+function closeModal() {
+  popup.style.display = "none";
+}
 
 function addNote(e){
   e.preventDefault();
@@ -30,7 +38,7 @@ function addNote(e){
 
   noteList.push(newNote);
   appendNotes();
-  console.log(noteList); 
+  closeModal();
 }
 
 function appendNotes() {
@@ -50,8 +58,8 @@ function appendNotes() {
     let elementNote = document.createElement('p');
     elementNote.innerText = note.note;
     elementNote.classList = 'app__note';
-    let elementDelete = document.createElement('span');
-    elementDelete.innerHTML = '&times';
+    let elementDelete = document.createElement('button');
+    elementDelete.innerHTML = 'Delete';
     elementDelete.classList.add('delete-item');
 
     element.appendChild(elementTitle);
@@ -59,5 +67,28 @@ function appendNotes() {
     element.appendChild(elementDelete);
 
     noteTable.appendChild(element);
+    getDeleteButtons();
+    localStorage.setItem('notes', JSON.stringify(noteList));
   })
+}
+
+function getDeleteButtons(){
+  noteDeleteButtons = Array.from(document.querySelectorAll('.delete-item'));
+
+  noteDeleteButtons.forEach(button =>{
+    let noteTitle = button.previousSibling.previousSibling.innerText;
+    button.addEventListener('click', () => {
+      deleteNote(noteTitle);
+    })
+  })
+}
+
+function deleteNote(noteTitle){
+  for(let i = 0; i < noteList.length; i++){
+    if(noteList[i].title == noteTitle){
+      noteList.splice(i, 1);
+    }
+  }
+  localStorage.setItem('notes', JSON.stringify(noteList));
+  appendNotes();
 }

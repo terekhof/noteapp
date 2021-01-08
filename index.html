@@ -39,7 +39,12 @@
               <label class="modal__label">Text</label>
               <textarea id="textarea" style="resize: none;" class="modal__input-textarea"></textarea>
             </div>
-            <button type="submit" id="addBtn" class="modal__button" type="submit" placeholder="submit">add Note</button>
+            <div class="buttons">
+              <button type="submit" id="addBtn" class="modal__button" type="submit" placeholder="submit">Add Note</button>
+              <div class="cancel">
+                <a onclick="closeModal()" href="#close" class="cancel-btn">Cancel</a>
+              </div>
+            </div>
           </form>
         </div>
       </div>

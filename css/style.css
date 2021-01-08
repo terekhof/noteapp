@@ -35,6 +35,7 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+  max-height: 740px;
 }
 
 .app__element {
@@ -54,6 +55,11 @@ body {
 
 .app__body {
   height: 750px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
 }
 
 h1 {
@@ -93,6 +99,7 @@ h1 {
   top: 0;
   right: 10px;
   color: #000;
+  cursor: pointer;
 }
 
 .close:hover,
@@ -143,7 +150,7 @@ h1 {
   outline-color: rgba(27, 27, 28, 0.25);
 }
 
-.modal__button {
+.modal__button, .cancel-btn{
   font-size: 14px;
   text-transform: uppercase;
   color: #ffffff;
@@ -154,10 +161,18 @@ h1 {
   display: block;
   padding: 20px 137.81px;
   text-align: center;
-  margin: 30px auto 0 auto;
   border-radius: 4px;
   font-family: 'Roboto Bold', sans-serif;
   font-weight: 700;
+  text-decoration: none;
+}
+
+.cancel {
+  margin: 0;
+}
+
+.cancel-btn {
+  background: red;
 }
 
 .modal__input-textarea {
@@ -171,4 +186,17 @@ h1 {
 
 .modal-form {
   width: 100%;
+}
+
+.delete-item {
+  font-size: 1rem;
+  background: red;
+  outline: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: #fff;
+}
+
+.delete-item:hover {
+  cursor: pointer;
 }
